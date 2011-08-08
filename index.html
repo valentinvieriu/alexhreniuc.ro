@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Alex Hreniuc</title>
+        <!-- load jQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        
+        <!-- load flickr plugin -->
+        <script src="js/flickr.js"></script>
+
+    </head>
+<body>
+    <div class="content">
+      
+        <div id="galleria"></div>
+    </div>
+    <script>
+
+    var flickr = new Flickr('bab05ea17002c5f9f458a145df6ff286');
+    flickr.setOptions({
+        max: 100,
+        thumbSize: 'small',
+        sort: 'interestingness-desc',
+        imageSize: 'big'
+    }).user('68069990@N00', function(data) {
+        // Galleria.get(0).load( data ); // reloads the first galleria instance with the new data
+        console.dir(data);
+    });
+    </script>
+    </body>
+</html>
