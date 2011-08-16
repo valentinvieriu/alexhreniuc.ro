@@ -261,6 +261,9 @@ Flickr.prototype = {
                 img = photo.url_o ? photo.url_o : this._getBig( photo );
                 break;
 
+            case 'normal':
+                img = photo.url_z || photo.url_m;
+                break;
             default:
                 img = photo.url_z || photo.url_m;
                 break;
@@ -285,7 +288,8 @@ Flickr.prototype = {
                 photos = data.photos ? data.photos.photo : data.photoset.photo,
                 len = Math.min( this.options.max, photos.length ),
                 photo,
-                i;
+                i,
+                mgallery = {};
 
             for ( i=0; i<len; i++ ) {
 
@@ -300,7 +304,8 @@ Flickr.prototype = {
                     link: this.options.backlink ? 'http://flickr.com/photos/' + photo.owner + '/' + photo.id : ''
                 });
             }
-            callback.call( this, gallery );
+            mgallery.data = gallery;
+            callback.call( this, mgallery );
         });
     }
 };
