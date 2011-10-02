@@ -16,12 +16,11 @@
     @class
     @constructor
 
-    @example var flickr = new Galleria.Flickr();
+    @example var flickr = new Flickr('API_KEY');
 
     @author http://aino.se
 
     @requires jQuery
-    @requires Galleria
 
     @param {String} [api_key] Flickr API key to be used, defaults to the Galleria key
 
@@ -286,6 +285,7 @@ Flickr.prototype = {
 
             var gallery = [],
                 photos = data.photos ? data.photos.photo : data.photoset.photo,
+                photosetid = data.photoset ? data.photoset.id : 'none',
                 len = Math.min( this.options.max, photos.length ),
                 photo,
                 i,
@@ -299,8 +299,9 @@ Flickr.prototype = {
                     thumb: this._getSize( photo, this.options.thumbSize ),
                     image: this._getSize( photo, this.options.imageSize ),
                     big: this._getBig( photo ),
-                    title: photos[i].title,
-                    description: this.options.description && photos[i].description ? photos[i].description._content : '',
+                    title: photo.title,
+                    id: photosetid+'_'+photo.id,
+                    description: this.options.description && photo.description ? photo.description._content : '',
                     link: this.options.backlink ? 'http://flickr.com/photos/' + photo.owner + '/' + photo.id : ''
                 });
             }

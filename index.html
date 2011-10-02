@@ -41,7 +41,7 @@
   .script("//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js").wait()
   .script("js/jquery.mustache.js")
   .script("js/flickr.js").wait()
-  .script("js/plugins.js").wait()
+  // .script("js/plugins.js").wait()
   .script("js/script.js") 
   //.script("//www.google-analytics.com/ga.js");
   </script>
@@ -69,7 +69,7 @@
       <tr>
       {{#data}}
         <td>
-        <img src="{{image}}" alt="{{title}}"/>
+        <img src="{{image}}" alt="{{title}}" id="{{id}}"/>
         <h4>{{title}}</h4>
         </td>
       {{/data}}

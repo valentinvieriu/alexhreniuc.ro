@@ -18,14 +18,7 @@ var buildMenu = function( data ) {
   var showMenu = function( data ) {
     $("#collections").html($.mustache($("script#menu_tpl").text(),data));
   };
-  var buildMenu = function( data ) {
-    if ( data.stat === "ok" ) {
-      showMenu( data );
-    }
-    else {
-      console.log( data.code.toString() + ' ' + data.stat + ': ' + data.message, true );
-    }
-  };
+
   var callFlickr = function( options, params, callback ) {
     var url = "http://api.flickr.com/services/rest/?";
     params = $.extend({
