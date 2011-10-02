@@ -1,3 +1,19 @@
+var buildMenu = function( data ) {
+  console.dir(data);
+  if ( data.stat === "ok" ) {
+    $.each(data.collections.collection, function(index, collection) {
+      if (collection.set[0].title === collection.title) {
+        collection.setid = collection.set[0].id;
+        console.log(collection.title,collection.setid);
+      }
+      
+    });
+    $("#collections").html($.mustache($("script#menu_tpl").text(),data));
+  }
+  else {
+    console.log( data.code.toString() + ' ' + data.stat + ': ' + data.message, true );
+  }
+};
 (function ($) {
   var showMenu = function( data ) {
     $("#collections").html($.mustache($("script#menu_tpl").text(),data));
@@ -15,7 +31,7 @@
     params = $.extend({
       format: "json",
       //jsoncallback: "buildMenu",
-      nojsoncallback: "1",
+      // nojsoncallback: "1",
       api_key: options.api_key,
       user_id: options.user_id 
     }, params );
@@ -24,12 +40,14 @@
         url: url,
         data: params,
         cache: true,
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR) {
-            //console.log(data, textStatus, jqXHR);
-            callback.call(this,data);
-            
-          },
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback',
+        jsonpCallback: callback,
+        // success: function(data, textStatus, jqXHR) {
+        //     //console.log(data, textStatus, jqXHR);
+        //     callback.call(this,data);
+        //     
+        //   },
         error:   function(data, textStatus, jqXHR) {
               console.error(data, textStatus, jqXHR);
             }
@@ -61,7 +79,7 @@
     if (options) {
       $.extend (defaults , options);
     }
-    callFlickr( defaults, { method: 'flickr.collections.getTree'}, buildMenu );
+    callFlickr( defaults, { method: 'flickr.collections.getTree'}, 'buildMenu' );
     return this;
   };
 }( jQuery ) );

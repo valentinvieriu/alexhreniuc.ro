@@ -50,7 +50,7 @@ Flickr.prototype = {
     constructor: Flickr,
 
     /**
-        Get colection from an user
+        Get the collection from an user
 
         @param {String|Number} user_id The used id of the user
         @param {Function} [callback] The callback to be called when the data is ready

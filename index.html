@@ -46,14 +46,20 @@
   //.script("//www.google-analytics.com/ga.js");
   </script>
   <script id="menu_tpl" type="text/html">
+    <h3>Portfolio</h3>
     {{#collections}}
       {{#collection}}
-        <h4>{{title}}</h4>
-          <ul id="navflickr">
-          {{#set}}
-            <li><a href="#{{id}}">{{title}}</a></li>
-          {{/set}}
-          </ul>
+        {{#setid}}
+          <h4><a href="#{{setid}}">{{title}}</a></h4>
+        {{/setid}}
+        {{^setid}}
+          <h4>{{title}}</h4>
+            <ul id="navflickr">
+            {{#set}}
+              <li><a href="#{{id}}">{{title}}</a></li>
+            {{/set}}
+            </ul>
+        {{/setid}}
       {{/collection}}
     {{/collections}}
   </script>
