@@ -1,6 +1,0 @@
-[submodule "lib/LABjs"]
-	path = lib/LABjs
-	url = https://github.com/getify/LABjs.git
-[submodule "lib/mustache"]
-	path = lib/mustache
-	url = https://github.com/janl/mustache.js.git
