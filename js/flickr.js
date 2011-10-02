@@ -298,7 +298,6 @@ Flickr.prototype = {
                 gallery.push({
                     thumb: this._getSize( photo, this.options.thumbSize ),
                     image: this._getSize( photo, this.options.imageSize ),
-                    big: this._getBig( photo ),
                     title: photo.title,
                     id: photosetid+'_'+photo.id,
                     description: this.options.description && photo.description ? photo.description._content : '',

@@ -1,7 +1,7 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie" lang="en"> <![endif]-->
+<html lang="en" xmlns:fb="https://www.facebook.com/2008/fbml">
+<!--[if lt IE 7]> <html class="ie6 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="ro"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -25,9 +25,9 @@
   <div id="content">
     <div id="menu">
       <h1>Alexandru Hreniuc Photography</h1>
+      <fb:like href="https://www.facebook.com/fotohreniuc" send="true" layout="button_count" width="230" show_faces="true"></fb:like>
       <ul id="nav">
         <li><a href="#">About</a></li>
-        <li><a href="#">Preturi</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <div id="collections">
@@ -42,7 +42,8 @@
   .script("js/jquery.mustache.js")
   .script("js/flickr.js").wait()
   // .script("js/plugins.js").wait()
-  .script("js/script.js") 
+  .script("//connect.facebook.net/ro_RO/all.js#xfbml=1")
+  .script("js/script.js"); 
   //.script("//www.google-analytics.com/ga.js");
   </script>
   <script id="menu_tpl" type="text/html">
@@ -68,14 +69,16 @@
     <tbody>
       <tr>
       {{#data}}
-        <td>
+        <td class="image">
         <img src="{{image}}" alt="{{title}}" id="{{id}}"/>
         <h4>{{title}}</h4>
+        <a href="#{{id}}" title="{{title}}" thumb="{{thumb}}">Share this</a>
         </td>
       {{/data}}
       </tr>
     </tbody>
   </table>
   </script>
+<div id="fb-root"></div>
 </body>
 </html>
