@@ -74,13 +74,6 @@ jQuery(document).ready(function($) {
   	imageSize : app.what_size(),
   	max:50
   };
-  $("body").mousewheel(function(event, delta) {
-
-     this.scrollLeft -= (delta * 30);
-
-     event.preventDefault();
-
-  });
     app.init();
     
     $.extend(true, FB, {
