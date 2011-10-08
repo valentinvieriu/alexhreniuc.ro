@@ -16,9 +16,9 @@ jQuery(document).ready(function($) {
   		fb_caption: "Alexndru Hreniuc Photography",
   		fb_description: "I am the best in the world! I am the best in the world!I am the best in the world!I am the best in the world!I am the best in the world!",
   		active_set: "72157627503614426",
-  		menu_template: $("script#menu_tpl").text(),
+  		menu_template: $("script#menu_tpl").html(),
   		menu_output: "div#collections",
-  		gallery_template: $("script#gallery_tpl").text(),
+  		gallery_template: $("script#gallery_tpl").html(),
   		gallery_output: "div#gallery"
   	},
   	what_size: function () {
@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
   	},
   	output_menu: function(data) {
   		console.log("Collection response:",data);
-  		$(app.config.menu_output).html($.mustache(app.config.menu_template,data));
+  		$(app.config.menu_output).html(Mustache.to_html(app.config.menu_template,data));
   	},
   	output_set: function(data) {
   		var result = [],
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
   				data.data = result;	
   			};
   		console.log("Set response:",data);
-          $(app.config.gallery_output).html($.mustache(app.config.gallery_template,data));
+          $(app.config.gallery_output).html(Mustache.to_html(app.config.gallery_template,data));
   	},
   	change_set: function(setID) {
   		app.flickr.set(setID, function(data) {

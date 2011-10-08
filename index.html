@@ -1,15 +1,15 @@
-<html lang="en" xmlns:fb="https://www.facebook.com/2008/fbml">
-<!--[if lt IE 7]> <html class="ie6 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="ro"> <!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--[if lt IE 7]> <html class="ie6 oldie" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml">  <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
     Welcome to my page
   </title>
-  <meta name="description" content="This is athe description of my page">
+  <meta name="description" content="This is the description of my page">
   <meta name="author" content="Valentin Vieriu">
   <!-- Facebook tags -->
   <meta property="og:title" content="" />
@@ -18,29 +18,28 @@
   <!-- /Facebook tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="//connect.facebook.net/ro_RO/all.js#xfbml=1" type="text/javascript" charset="utf-8"></script>
-  <script src="js/jquery.mustache.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/flickr.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="http://fonts.googleapis.com/css?family=Questrial&subset=latin" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div id="content">
+
     <div id="menu">
       <h1>Alexandru Hreniuc Photography</h1>
       <fb:like href="https://www.facebook.com/fotohreniuc" send="true" layout="button_count" width="230" show_faces="true"></fb:like>
       <ul id="nav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">About me</a></li>
+        <li><a href="#">Facebook page</a></li>
+        <li><a href="#">Contact me</a></li>
       </ul>
+      
       <div id="collections">
       </div>
+      
     </div>
+    
     <div id="gallery"></div>
-  </div>
+
   <script id="menu_tpl" type="text/html">
-    <h3>Portfolio</h3>
     {{#collections}}
       {{#collection}}
         {{#setid}}
@@ -50,7 +49,7 @@
           <h4>{{title}}</h4>
             <ul id="navflickr">
             {{#set}}
-              <li><a href="#{{id}}">{{title}}</a></li>
+              <li><a href="#{{id}}"><span>&raquo;</span> {{title}}</a></li>
             {{/set}}
             </ul>
         {{/setid}}
@@ -64,8 +63,8 @@
       {{#data}}
         <td class="image">
         <img src="{{image}}" alt="{{title}}" id="{{id}}"/>
+        <a href="#{{id}}" title="{{title}}" thumb="{{thumb}}" class="share_button">Share this</a>
         <h4>{{title}}</h4>
-        <a href="#{{id}}" title="{{title}}" thumb="{{thumb}}">Share this</a>
         </td>
       {{/data}}
       </tr>
@@ -73,5 +72,10 @@
   </table>
   </script>
 <div id="fb-root"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//connect.facebook.net/ro_RO/all.js#xfbml=1" type="text/javascript" charset="utf-8"></script>
+<script src="js/mustache.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/flickr.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

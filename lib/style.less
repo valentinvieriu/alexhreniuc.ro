@@ -1,0 +1,87 @@
+/* style.less
+ * very specific design elements
+ * ----------------------------------------------------- */
+ @menuWidth:  3*@gridColumnWidth;
+ a{
+   color:@linkColor;
+   text-decoration:none;
+   &:hover{
+     color: @linkColorHover;
+   }
+   span {
+     font-size: @basefont+3;
+     padding-right: 5px;
+   }
+ }
+ html {
+ 	overflow-y: hidden;
+ 	overflow-x: auto;
+ }
+ body {
+ 	width: 100%;
+ 	height: 100%;
+ 	font-family: 'Questrial', Helvetica, Arial, Verdana, Tahoma, Geneva, sans-serif;
+ 	font-size:@basefont;
+ 	background-color:@grayLighter;
+ 	-webkit-font-smoothing: antialiased;  
+ }
+ div#menu {
+ 	width: @menuWidth;
+ 	position: fixed;
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 3*@baseline;
+ 	background-color: @white;
+ 	padding: 3*@baseline @gridGutterWidth @gridGutterWidth;
+ 	z-index:100;
+ 	border-left:1px solid @grayLight;
+ 	border-right:1px solid @grayLight;
+ 	.opacity(95);
+ }
+ div#menu h1 {
+  background: url('../img/logo.png') no-repeat scroll top left;
+  width: 210px;
+  height: 72px;
+  text-indent:-999px;
+  overflow:hidden;       
+ }
+ div#menu h4 {
+  font-weight:bold;
+  color:@black;
+  margin: @baseline 0 0;     
+ }
+ .fb_iframe_widget {
+  margin: @baseline auto 3*@baseline auto; 
+ }
+ div#gallery {
+ 	margin-top: 3*@baseline;
+ }
+
+ div#gallery table {
+ 	margin-left: @menuWidth + 6*@gridGutterWidth;
+}
+ div#gallery table td img{
+ 	margin-right: @gridGutterWidth;
+ 	height:683px;
+ 	.box-shadow(1px 2px 4px rgba(0,0,0,.45));
+
+ }
+
+ div#gallery.medium table td img {
+ 	height: 480px;
+ }
+ div#gallery h4 {
+   float:left;
+   margin-top:@gridGutterWidth/2+5;
+ }
+ div#gallery .share_button{
+  background: url('../img/facebook-like.jpg') no-repeat scroll top left;
+  width: 49px;
+  height: 24px;   
+  text-indent:-9999px;
+  overflow:hidden;
+  margin:@gridGutterWidth/2 @gridGutterWidth/2 @gridGutterWidth/2 0;
+  display:block;
+  float:left;
+ }
+ 
