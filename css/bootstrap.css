@@ -29,6 +29,7 @@ div#menu h1{background:url('../img/logo.png') no-repeat scroll top left;width:21
 div#menu h4{color:#2d2d2d;margin:20px 0 0;}
 .fb_iframe_widget{margin:20px auto 60px auto;}
 div#menu p{display:none;padding:10px;background-color:#fdfdfd;margin-bottom:10px;font-family:Helvetica,Arial;font-size:12px;line-height:1.3em;color:#adadad;-webkit-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.15);-moz-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.15);box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.15);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}div#menu p strong{color:#e52126;}
+#collections a.active{color:#e52126;}
 div#gallery{margin-top:60px;}
 div#gallery table{margin-left:330px;}
 div#gallery table td img{margin-right:20px;height:683px;-webkit-box-shadow:1px 2px 4px rgba(0, 0, 0, 0.45);-moz-box-shadow:1px 2px 4px rgba(0, 0, 0, 0.45);box-shadow:1px 2px 4px rgba(0, 0, 0, 0.45);}

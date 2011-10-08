@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
    		};
   	},
   	output_menu: function(data) {
-  		console.log("Collection response:",data);
+      // console.log("Collection response:",data);
   		$(app.config.menu_output).html(Mustache.to_html(app.config.menu_template,data));
   	},
   	output_set: function(data) {
@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
   				});
   				data.data = result;	
   			};
-  		console.log("Set response:",data);
+      // console.log("Set response:",data);
           $(app.config.gallery_output).html(Mustache.to_html(app.config.gallery_template,data));
   	},
   	change_set: function(setID) {
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
   	max:50
   };
     app.init();
-    window.scrollTo(0, 1);
+
     $.extend(true, FB, {
       general_callback: function(response) {
         console.info(response);
@@ -84,6 +84,8 @@ jQuery(document).ready(function($) {
     $(app.config.menu_output+' a').live('click', function(event) {
       $(app.config.gallery_output).empty();
       app.change_set(this.hash.slice(1));
+      $(app.config.menu_output+' a').removeClass('active');
+      $(this).addClass("active");
     });
 
 
@@ -104,4 +106,5 @@ jQuery(document).ready(function($) {
       $(this).next().slideToggle(300);
       e.preventDefault();
   });
+  
 });
