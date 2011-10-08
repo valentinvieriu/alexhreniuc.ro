@@ -19,7 +19,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="//connect.facebook.net/ro_RO/all.js#xfbml=1" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.mustache.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/flickr.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
   <div id="content">
@@ -35,17 +39,6 @@
     </div>
     <div id="gallery"></div>
   </div>
-  <script>
-  //var _gaq=[['_setAccount','{$config->getProjectSetting( 'analyticsID' )}'],['_trackPageview'],['_trackPageLoadTime']];
-  $LAB
-  .script("//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js").wait()
-  .script("js/jquery.mustache.js")
-  .script("js/flickr.js").wait()
-  // .script("js/plugins.js").wait()
-  .script("//connect.facebook.net/ro_RO/all.js#xfbml=1")
-  .script("js/script.js"); 
-  //.script("//www.google-analytics.com/ga.js");
-  </script>
   <script id="menu_tpl" type="text/html">
     <h3>Portfolio</h3>
     {{#collections}}
