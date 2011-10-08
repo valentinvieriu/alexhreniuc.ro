@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
   	max:50
   };
     app.init();
-    
+    window.scrollTo(0, 1);
     $.extend(true, FB, {
       general_callback: function(response) {
         console.info(response);
@@ -99,5 +99,9 @@ jQuery(document).ready(function($) {
     };
     FB.ui(obj, FB.general_callback); 
   });
-
+  
+  $("#aboutme,#contact").live('click', function(e){
+      $(this).next().slideToggle(300);
+      e.preventDefault();
+  });
 });
