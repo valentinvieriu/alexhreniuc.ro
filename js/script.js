@@ -103,7 +103,9 @@ jQuery(document).ready(function($) {
   });
   
   $("#aboutme,#contact").live('click', function(e){
-      $(this).next().slideToggle(300);
+      $(this)
+        .next("p")
+        .slideToggle(300);
       e.preventDefault();
   });
   
