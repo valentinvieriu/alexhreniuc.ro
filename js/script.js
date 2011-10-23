@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
   	config : {
   		flickr_API: "bab05ea17002c5f9f458a145df6ff286",
   		user_ID: "66052014@N08",
-  		fb_caption: "Alexndru Hreniuc Photography",
-  		fb_description: "I am the best in the world! I am the best in the world!I am the best in the world!I am the best in the world!I am the best in the world!",
+  		fb_caption: "Hreniuc Alexandru",
+  		fb_description: "http://www.facebook.com/fotohreniuc | www.alexhreniuc.ro | tel: 0040744586226",
   		active_set: "72157627503614426",
   		menu_template: $("script#menu_tpl").html(),
   		menu_output: "div#collections",
@@ -24,11 +24,11 @@ jQuery(document).ready(function($) {
   	what_size: function () {
    		var height = $(window).height();
    		if ( height<860 ) {
-   			$(app.config.gallery_output).addClass('medium')
+   			$(app.config.gallery_output).addClass('medium');
    			return "medium";
    		} else{
    			return "big";
-   		};
+   		}
   	},
   	output_menu: function(data) {
       // console.log("Collection response:",data);
@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
   					}  
   				});
   				data.data = result;	
-  			};
+  			}
       // console.log("Set response:",data);
           $(app.config.gallery_output).html(Mustache.to_html(app.config.gallery_template,data));
   	},
@@ -104,9 +104,17 @@ jQuery(document).ready(function($) {
   
   $("#aboutme,#contact").live('click', function(e){
       $(this)
-        .next("p")
+        .next("div")
         .slideToggle(300);
       e.preventDefault();
   });
-  
+
+  $("#JqPostForm").submit(function(e) {
+    e.preventDefault();
+
+    $.post("send.php", $("#JqPostForm").serialize(), function(data) {
+      $("#JqPostForm").hide().after("<p><strong>Mesaj trimis ! </strong></p>");
+    });
+  });
+ 
 });

@@ -7,32 +7,53 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
-    Welcome to my page
+    Hreniuc Alexandru, photographer Timisoara
   </title>
-  <meta name="description" content="This is the description of my page">
-  <meta name="author" content="Valentin Vieriu">
-  <!-- Facebook tags -->
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="" /> 
-  <!-- /Facebook tags -->
+  <meta name="description" content="Professional photographer based in Timisoara, Romania. Specialized in weddings,sports, portrait and advertising.Facebook : hmmm.e ok acelasi text ca la descriere? Professional photographer based in Timisoara, Romania. Specialized in weddings,sports, portrait and advertising.">
   <meta name="viewport" content="height=device-height">
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link href="http://fonts.googleapis.com/css?family=Questrial&subset=latin" rel="stylesheet" type="text/css">
+  <script src="js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
     <div id="menu">
-      <a href="/"><h1>Alexandru Hreniuc Photography</h1></a>
+      <a href="/"><h1>Hreniuc Alexandru, photographer from Timisoara</h1></a>
       <fb:like href="https://www.facebook.com/fotohreniuc" send="true" layout="button_count" width="210" show_faces="true"></fb:like>
       <ul id="nav">
         <li><a href="#aboutme" id="aboutme">About me</a>
-          <p>Hi, I'm Alexandru Hreniuc and I love to take photos.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'</p>
+          <div>
+            <p>I`m Alex Hreniuc, photographer and I love taking pictures,traveling and meeting new people.In 2011 I was named the best wedding photographer in Romania by AAFR .</p>
+          <strong>Photo awards</strong>:
+            <ul>
+              <li>- the gold medal on weddings 2011
+              </li>
+              <li>- the bronze medal on sports 2011
+              </li>
+              <li>- 1st place on Sport in Photo Magazine 2010
+              </li>
+              <li>- 2nd place On Portrait in Photo Magazine 2011
+              </li>
+            </ul>
+
+           </p>
+           </div>
         </li>
         <li><a href="https://www.facebook.com/fotohreniuc">Facebook page</a></li>
         <li><a href="#contact" id="contact">Contact me</a>
+          <div>
           <p>Tel : <strong>+4 0744 586 226</strong> <br />Email: <strong>contact@alexhreniuc.ro</strong></p>
+          <form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm">
+            <label for="nume">Nume</label><br /><input type="text" name="nume" value="" id="nume" /><br />
+            <label for="mesaj">Mesaj</label><br /><textarea rows="2" type="text" name="message" value="" id="message" ></textarea>
+            <input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to" />
+            <input type="hidden" name="from" value="website@alexhreniuc.ro" id="from" />
+            <input type="hidden" name="subject" value="Email trimis de pe site" id="subject" /> 
+            <input type="submit" name="submit" value="Trimite" id="submit" />
+
+          </form>
+          </div>
         </li>
       </ul>
       
@@ -76,10 +97,15 @@
   </table>
   </script>
 <div id="fb-root"></div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="//connect.facebook.net/ro_RO/all.js#xfbml=1" type="text/javascript" charset="utf-8"></script>
-<script src="js/mustache.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/flickr.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" wicket:id="javascriptLoader" charset="utf-8">
+    var _gaq=[['_setAccount','UA-17875582-1'],['_trackPageview'],['_trackPageLoadTime']];
+    $LAB
+    .script("//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js").wait()
+    .script("//connect.facebook.net/en_US/all.js")
+    .script("js/mustache.js")
+    .script("js/flickr.js").wait() 
+    .script("js/script.js") 
+    .script("//www.google-analytics.com/ga.js");
+</script>
 </body>
 </html>
