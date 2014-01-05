@@ -353,7 +353,7 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:valentinvieriu/angular-flickr.git',
+          remote: 'git@github.com:valentinvieriu/alexhreniuc.ro.git',
           branch: 'gh-pages'
         }
       },
