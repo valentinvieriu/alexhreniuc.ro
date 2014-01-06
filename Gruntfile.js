@@ -208,7 +208,7 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
       }
     },
 
@@ -343,6 +343,21 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
+    // Inining the views
+    inline_angular_templates: {
+      dist: {
+        options: {
+            base: '<%= yeoman.app %>', // (Optional) ID of the <script> tag will be relative to this folder. Default is project dir.
+            prefix: '',            // (Optional) Prefix path to the ID. Default is empty string.
+            selector: 'body',       // (Optional) CSS selector of the element to use to insert the templates. Default is `body`.
+            method: 'append'       // (Optional) DOM insert method. Default is `prepend`.
+        },
+        files: {
+            '<%= yeoman.dist %>/index.html': ['<%= yeoman.app %>/views/**/*.html']
+        }
+      }
+    },
+
     //Deploy to github
     buildcontrol: {
       options: {
@@ -423,7 +438,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'inline_angular_templates'
+    // 'htmlmin'
   ]);
 
   grunt.registerTask('default', [
