@@ -48,8 +48,8 @@ div#menu {
 	padding          : 15px 20px 20px;
 	width            : 210px;
 	border-right     : 1px solid #f5f5f5;
-	background-color : #ffffff;
 	border-left      : 1px solid #f5f5f5;
+	background-color : #ffffff;
 
 	h1 {
 		overflow: hidden;
@@ -64,7 +64,7 @@ div#menu {
 	}
 
 	li div {
-		@include single-box-shadow(inset 1px 1px 3px rgba(0, 0, 0, 0.15));
+		@include box-shadow(inset 1px 1px 3px rgba(0, 0, 0, 0.15));
 		margin-bottom    : 10px;
 		padding          : 10px;
 		border-radius    : 3px;
@@ -104,7 +104,7 @@ div#gallery table {
 div#gallery .picture {
 	margin-right: 20px;
 	height: 683px;
-	@include single-box-shadow(1px 2px 4px rgba(0, 0, 0, 0.45));
+	@include box-shadow(1px 2px 4px rgba(0, 0, 0, 0.45));
 }
 div#gallery.medium .picture {
 	height: 480px;
