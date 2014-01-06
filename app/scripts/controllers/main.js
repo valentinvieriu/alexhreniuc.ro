@@ -17,7 +17,7 @@ angular.module('angularFlickrApp')
   		
   	}
 
-    $scope.sharePicture = function sharePicture(photo_url,photo_title) {
+    $scope.sharePictureFacebook = function sharePicture(photo_url,photo_title) {
       FB.ui({
           method: 'feed',
           link: window.location.href,
@@ -26,6 +26,16 @@ angular.module('angularFlickrApp')
           caption: facebookConfig.caption,
           description: facebookConfig.description
       });
+    };    
+
+    $scope.sharePicturePinterest = function sharePicture(photo_url,photo_title) {
+      window.open(
+        'http://www.pinterest.com/pin/create/button/'+
+        '?url='+encodeURIComponent(window.location.href)+
+        '&media='+encodeURIComponent(photo_url)+
+        '&description='+encodeURIComponent(photo_title),
+        'Share on Pinterest',
+        'width=700,height=300,top='+(screen.height-300)/2+',left='+(screen.width-700)/2);
     };
 
   });
