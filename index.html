@@ -14,10 +14,10 @@
     <title>
       Hreniuc Alexandru, photographer Timisoara
     </title>
-    <meta name="description" content="Professional photographer based in Timisoara, Romania. Specialized in weddings,Sports, portrait and advertising.Facebook : hmmm.e ok acelasi text ca la descriere? Professional photographer based in Timisoara, Romania. Specialized in weddings,sports, portrait and advertising.">
+    <meta name="description" content="Professional photographer based in Timisoara, Romania. Specialized in weddings,Sports, portrait and advertising.">
     <meta name="viewport" content="height=device-height">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/f41041bc.main.css">
+    <link rel="stylesheet" href="styles/f2c969e8.main.css">
     <link href="http://fonts.googleapis.com/css?family=Questrial&amp;subset=latin" rel="stylesheet" type="text/css">
   </head>
   <body ng-app="angularFlickrApp">
@@ -30,10 +30,14 @@
       <ul id="nav">
         <li><a href="" ng-click="about=!about" id="aboutme">About me</a>
           <div ng-show="about==true">
-            <p>I`m Alex Hreniuc, photographer and I love taking pictures,traveling and meeting new people.In 2011 I was named the best wedding photographer in Romania by AAFR .</p>
-          <strong>Photo awards</strong>:
+            <!-- Text About ME -  EDITEAZA DE AICI!!! -->
+
+            <p>I`m Alex Hreniuc, photographer and I love taking pictures,traveling and meeting new people.In 2011 and 2012 I was named the best wedding photographer in Romania by AAFR.</p>
+            <strong>Photo awards</strong>:
             <ul>
               <li>- the gold medal on weddings 2011
+              </li>              
+              <li>- the gold medal on weddings 2012
               </li>
               <li>- the bronze medal on Sports 2011
               </li>
@@ -41,12 +45,11 @@
               </li>
               <li>- 2nd place on Portrait in Photo Magazine 2011
               </li>
-              <li>- 1st place on weddings 2012 AAFR</li>
-              <li>- 1st place on portrait 2012 AAFR</li>
-              <li>- the bronze medal with "Mica Sirena" 2012 AAFR</li>
             </ul>
 
            <p></p>
+
+           <!-- Pana aici -->
            </div>
         </li>
         <li><a href="https://www.facebook.com/fotohreniuc">Facebook page</a></li>
@@ -56,6 +59,7 @@
           <p>Tel : <strong>+4 0744 586 226</strong> <br>Email: <strong>contact@alexhreniuc.ro</strong></p>
           <form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm">
             <label for="nume">Nume</label><br><input type="text" name="name" value="" id="name"><br>
+            <label for="email">Email</label><br><input type="text" name="email" value="" id="email"><br>
             <label for="mesaj">Mesaj</label><br><textarea rows="2" type="text" name="content" value="" id="content"></textarea>
             <input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to">
             <input type="hidden" name="from" value="website@alexhreniuc.ro" id="from">
@@ -86,6 +90,8 @@
     <div id="gallery" ng-view="">
       
     </div>
+
+    <!-- Facebook -->
     <div class="fb-like" data-href="https://www.facebook.com/fotohreniuc" data-send="false" data-layout="box_count" data-width="55" data-show-faces="false" data-font="lucida grande"></div>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -94,8 +100,20 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=266780870023235";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
+    <!-- Pinterest -->
+    <script type="text/javascript">
+    (function(d){
+        var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = '//assets.pinterest.com/js/pinit.js';
+        f.parentNode.insertBefore(p, f);
+    }(document));
+    </script>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -114,7 +132,7 @@
 
     <script src="scripts/2d53cd22.vendor.js"></script>
 
-        <script src="scripts/93ef68c4.scripts.js"></script>
+        <script src="scripts/d861aa4c.scripts.js"></script>
 
 
 <!-- Begin Templates -->
@@ -123,9 +141,14 @@
 	<tbody>
 	  <tr>
 	    <td class="image" ng-repeat="photo in photoset.photo">
-		    <img ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
-		    <a href="" ng-click="sharePicture(photo.url_l,photo.title)" class="share_button">Share this</a>
+		    <img class="picture" ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
 		    <h4>{{photo.title}}</h4>
+		    <a  class="share_button" href="" ng-click="sharePictureFacebook(photo.url_l,photo.title)">
+				<img src="images/facebook-like.jpg">
+		    </a>
+		    <a class="share_button" href="" ng-click="sharePicturePinterest(photo.url_l,photo.title)" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28">
+		    	<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
+		    </a>
 	    </td>
 	  </tr>
 	</tbody>
