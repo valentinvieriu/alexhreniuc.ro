@@ -210,7 +210,7 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images'],
         patterns: {
-          html: [[/(logo\.png)/, '4298df58.logo.png']] // FIXME While usemin won't have full support for revved files we have to put all references manually here
+          // js: [[/(logo\.png)/, '4298df58.logo.png']] // FIXME While usemin won't have full support for revved files we have to put all references manually here
         }
       }
     },
