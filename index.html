@@ -1,18 +1,138 @@
-<!doctype html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><meta property="og:type" content="website"><meta property="og:url" content="http://www.alexreniuc.ro"><meta property="og:image" content="http://www.alexreniuc.ro/img/logo.png"><meta property="og:site_name" content="Hreniuc Alexandru, photographer Timisoara"><meta property="fb:app_id" content="266780870023235"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Hreniuc Alexandru, photographer Timisoara</title><meta name="description" content="Professional photographer based in Timisoara, Romania. Specialized in weddings,Sports, portrait and advertising.Facebook : hmmm.e ok acelasi text ca la descriere? Professional photographer based in Timisoara, Romania. Specialized in weddings,sports, portrait and advertising."><meta name="viewport" content="height=device-height"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="styles/ae9a49b5.main.css"><link href="http://fonts.googleapis.com/css?family=Questrial&subset=latin" rel="stylesheet" type="text/css"><body ng-app="angularFlickrApp"><!--[if lt IE 7]>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.alexreniuc.ro">
+    <meta property="og:image" content="http://www.alexreniuc.ro/img/logo.png">
+    <meta property="og:site_name" content="Hreniuc Alexandru, photographer Timisoara">
+    <meta property="fb:app_id" content="266780870023235">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+      Hreniuc Alexandru, photographer Timisoara
+    </title>
+    <meta name="description" content="Professional photographer based in Timisoara, Romania. Specialized in weddings,Sports, portrait and advertising.Facebook : hmmm.e ok acelasi text ca la descriere? Professional photographer based in Timisoara, Romania. Specialized in weddings,sports, portrait and advertising.">
+    <meta name="viewport" content="height=device-height">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/ae9a49b5.main.css">
+    <link href="http://fonts.googleapis.com/css?family=Questrial&amp;subset=latin" rel="stylesheet" type="text/css">
+  </head>
+  <body ng-app="angularFlickrApp">
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--><div id="menu" ng-controller="GallerylistCtrl"><a href="/"><h1>Hreniuc Alexandru, photographer from Timisoara</h1></a><ul id="nav"><li><a href="" ng-click="about=!about" id="aboutme">About me</a><div ng-show="about==true"><p>I`m Alex Hreniuc, photographer and I love taking pictures,traveling and meeting new people.In 2011 I was named the best wedding photographer in Romania by AAFR .</p><strong>Photo awards</strong>:<ul><li>- the gold medal on weddings 2011</li><li>- the bronze medal on Sports 2011</li><li>- 1st place on Sport in Photo Magazine 2010</li><li>- 2nd place on Portrait in Photo Magazine 2011</li><li>- 1st place on weddings 2012 AAFR</li><li>- 1st place on portrait 2012 AAFR</li><li>- the bronze medal with "Mica Sirena" 2012 AAFR</li></ul></div></li><li><a href="https://www.facebook.com/fotohreniuc">Facebook page</a></li><li><a href="http://www.alexhreniuc.ro/blog/">Blog</a></li><li><a href="" ng-click="contact=!contact" id="contact">Contact me</a><div ng-show="contact==true"><p>Tel : <strong>+4 0744 586 226</strong><br>Email: <strong>contact@alexhreniuc.ro</strong></p><form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm"><label for="nume">Nume</label><br><input type="text" name="name" value="" id="name"><br><label for="mesaj">Mesaj</label><br><textarea rows="2" type="text" name="content" value="" id="content"></textarea><input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to"><input type="hidden" name="from" value="website@alexhreniuc.ro" id="from"><input type="hidden" name="subject" value="Email trimis de pe site" id="subject"><input type="submit" name="submit" value="Trimite" id="submit"></form></div></li></ul><div id="collections"><ul class="list-unstyled" ng-repeat="collection in collections.collection"><li><h4>{{collection.title}}</h4><ul ng-repeat="set in collection.set"><li><a href="#/{{set.title}}/{{set.id}}" ng-class="{'active':isCurrentGallery(set.id)}"><span>&raquo;</span> {{set.title}}</a></li></ul></li></ul></div></div><!-- Add your site or application content here --><div id="gallery" ng-view=""></div><div class="fb-like" data-href="https://www.facebook.com/fotohreniuc" data-send="false" data-layout="box_count" data-width="55" data-show-faces="false" data-font="lucida grande"></div><div id="fb-root"></div><script>(function(d, s, id) {
+    <![endif]-->
+
+    <div id="menu" ng-controller="GallerylistCtrl">
+      <a href="/"><h1>Hreniuc Alexandru, photographer from Timisoara</h1></a>
+      <ul id="nav">
+        <li><a href="" ng-click="about=!about" id="aboutme">About me</a>
+          <div ng-show="about==true">
+            <p>I`m Alex Hreniuc, photographer and I love taking pictures,traveling and meeting new people.In 2011 I was named the best wedding photographer in Romania by AAFR .</p>
+          <strong>Photo awards</strong>:
+            <ul>
+              <li>- the gold medal on weddings 2011
+              </li>
+              <li>- the bronze medal on Sports 2011
+              </li>
+              <li>- 1st place on Sport in Photo Magazine 2010
+              </li>
+              <li>- 2nd place on Portrait in Photo Magazine 2011
+              </li>
+              <li>- 1st place on weddings 2012 AAFR</li>
+              <li>- 1st place on portrait 2012 AAFR</li>
+              <li>- the bronze medal with "Mica Sirena" 2012 AAFR</li>
+            </ul>
+
+           <p></p>
+           </div>
+        </li>
+        <li><a href="https://www.facebook.com/fotohreniuc">Facebook page</a></li>
+        <li><a href="http://www.alexhreniuc.ro/blog/">Blog</a></li>
+        <li><a href="" ng-click="contact=!contact" id="contact">Contact me</a>
+          <div ng-show="contact==true">
+          <p>Tel : <strong>+4 0744 586 226</strong> <br>Email: <strong>contact@alexhreniuc.ro</strong></p>
+          <form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm">
+            <label for="nume">Nume</label><br><input type="text" name="name" value="" id="name"><br>
+            <label for="mesaj">Mesaj</label><br><textarea rows="2" type="text" name="content" value="" id="content"></textarea>
+            <input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to">
+            <input type="hidden" name="from" value="website@alexhreniuc.ro" id="from">
+            <input type="hidden" name="subject" value="Email trimis de pe site" id="subject">
+            <input type="submit" name="submit" value="Trimite" id="submit">
+
+          </form>
+          </div>
+        </li>
+      </ul>
+
+      <div id="collections">
+        <ul class="list-unstyled" ng-repeat="collection in collections.collection">
+          <li>
+            <h4> {{collection.title}}</h4>
+            <ul ng-repeat="set in collection.set">
+                <li>
+                  <a href="#/{{set.title}}/{{set.id}}" ng-class="{&apos;active&apos;:isCurrentGallery(set.id)}"> <span>&raquo;</span> {{set.title}}</a>
+                </li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+    <!-- Add your site or application content here -->
+    <div id="gallery" ng-view="">
+      
+    </div>
+    <div class="fb-like" data-href="https://www.facebook.com/fotohreniuc" data-send="false" data-layout="box_count" data-width="55" data-show-faces="false" data-font="lucida grande"></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=266780870023235";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script><!--[if lt IE 9]>
+       ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]--><script src="scripts/938f7885.vendor.js"></script><script src="scripts/93ef68c4.scripts.js"></script>
+    <![endif]-->
+
+    <script src="scripts/938f7885.vendor.js"></script>
+
+        <script src="scripts/93ef68c4.scripts.js"></script>
+
+
+<!-- Begin Templates -->
+<script type="text/ng-template" id="views/main.html">
+<table>
+	<tbody>
+	  <tr>
+	    <td class="image" ng-repeat="photo in photoset.photo">
+		    <img ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
+		    <a href="" ng-click="sharePicture(photo.url_l,photo.title)" class="share_button">Share this</a>
+		    <h4>{{photo.title}}</h4>
+	    </td>
+	  </tr>
+	</tbody>
+</table>
+
+</script>
+<!-- End Templates -->
+
+</body>
+</html>

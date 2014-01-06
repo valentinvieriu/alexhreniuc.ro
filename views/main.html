@@ -1,1 +1,11 @@
-<table><tbody><tr><td class="image" ng-repeat="photo in photoset.photo"><img ng-src="{{photo.url_l}}" alt="{{photo.title}}"> <a href="" ng-click="sharePicture(photo.url_l,photo.title)" class="share_button">Share this</a><h4>{{photo.title}}</h4></td></table>
+<table>
+	<tbody>
+	  <tr>
+	    <td class="image" ng-repeat="photo in photoset.photo">
+		    <img ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
+		    <a href="" ng-click="sharePicture(photo.url_l,photo.title)" class="share_button">Share this</a>
+		    <h4>{{photo.title}}</h4>
+	    </td>
+	  </tr>
+	</tbody>
+</table>
