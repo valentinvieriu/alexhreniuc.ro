@@ -437,8 +437,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin',
-    'inline_angular_templates'
+    'inline_angular_templates',
+    'usemin'
     // 'htmlmin'
   ]);
 
