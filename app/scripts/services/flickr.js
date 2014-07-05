@@ -2,7 +2,7 @@
 
 angular.module('FlickrAPI',[])
   .provider('Flickr', function FlickrProvider() {
-    var restUrl = 'http://api.flickr.com/services/rest/?format=json';
+    var restUrl = 'https://api.flickr.com/services/rest/?format=json';
     var api_key = '';
     var user_id = '';
     var extras  = 'url_l';

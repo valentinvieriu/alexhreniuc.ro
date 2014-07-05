@@ -2,10 +2,10 @@
 	<tbody>
 	  <tr>
 	    <td class="image" ng-repeat="photo in photoset.photo">
-		    <img class="picture" ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
+		    <img class="picture" ng-src="{{photo.url_l || photo.url_z}}" alt="{{photo.title}}" style="height:{{windowHeight - 100}}px;"/>
 		    <h4>{{photo.title}}</h4>
 		    <a  class="share_button" href="" ng-click="sharePictureFacebook(photo.url_l,photo.title)">
-				<img src="images/facebook-like.jpg">
+				<img src="images/facebook-like.jpg" >
 		    </a>
 		    <a class="share_button" href="" ng-click="sharePicturePinterest(photo.url_l,photo.title)" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28">
 		    	<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />

@@ -1,15 +1,20 @@
 'use strict';
 
 angular.module('angularFlickrApp')
-  .controller('MainCtrl', function ($rootScope, $scope, $routeParams, Flickr, facebookConfig) {
-  	$rootScope.currentPhotoset = $routeParams.photoset_id || '72157627503614426';
+  .controller('MainCtrl', function ($rootScope, $scope, $window, $document, $routeParams, Flickr, facebookConfig) {
+  	var pictureSize = 'url_l';
+    $rootScope.currentPhotoset = $routeParams.photoset_id || '72157627503614426';
+    $scope.windowHeight = $window.innerHeight || $document.documentElement.clientHeight;
 
+    if ($scope.windowHeight < 768) {
+      pictureSize = 'url_z'
+    };
   	// check if we have the information cacched
   	if ($rootScope.photosets && $rootScope.photosets[$rootScope.currentPhotoset]) {
   		$scope.photoset = $rootScope.photosets[$rootScope.currentPhotoset];
   	}
   	else {
-	  	Flickr.getSet($rootScope.currentPhotoset,'url_l')
+	  	Flickr.getSet($rootScope.currentPhotoset,pictureSize)
 	  		.then(function(data){
           $scope.photoset                                  = data.photoset;
           $rootScope.photosets[$rootScope.currentPhotoset] = data.photoset;

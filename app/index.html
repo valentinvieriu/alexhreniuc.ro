@@ -59,13 +59,13 @@
         <li><a href="" ng-click="contact=!contact" id="contact">Contact me</a>
           <div ng-show="contact==true">
           <p>Tel : <strong>+4 0744 586 226</strong> <br />Email: <strong>contact@alexhreniuc.ro</strong></p>
-          <form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm">
-            <label for="nume">Nume</label><br /><input type="text" name="name" value="" id="name" /><br />
-            <label for="email">Email</label><br /><input type="text" name="email" value="" id="email" /><br />
-            <label for="mesaj">Mesaj</label><br /><textarea rows="2" type="text" name="content" value="" id="content" ></textarea>
-            <input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to" />
-            <input type="hidden" name="from" value="website@alexhreniuc.ro" id="from" />
-            <input type="hidden" name="subject" value="Email trimis de pe site" id="subject" />
+          <form name="contactForm" ng-controller="ContactformCtrl"  ng-submit="submit()" id="JqPostForm">
+            <input type="text" required ng-model="formData.name" name="name" value="" id="name" placeholder="Name" /><br />
+            <input type="email" required ng-model="formData.from" name="from" value="" id="email" placeholder="Email"/><br />
+            <textarea ng-model="formData.content" name="mesaj" rows="2" type="text" name="content" value="" id="content" ></textarea>
+
+            <input type="hidden" ng-init="formData.to='contact@alexhreniuc.ro'" name="to" value="contact@alexhreniuc.ro" id="to" />
+            <input type="hidden" ng-init="formData.subject='Email trimis de pe site'" name="subject" value="Email trimis de pe site" id="subject" />
             <input type="submit" name="submit" value="Trimite" id="submit" />
 
           </form>
@@ -147,6 +147,7 @@
         <script src="scripts/services/Flickr.js"></script>
         <script src="scripts/controllers/galleryList.js"></script>
         <script src="scripts/services/facebookConfig.js"></script>
+        <script src="scripts/controllers/contactForm.js"></script>
         <!-- endbuild -->
 </body>
 </html>
