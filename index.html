@@ -57,13 +57,13 @@
         <li><a href="" ng-click="contact=!contact" id="contact">Contact me</a>
           <div ng-show="contact==true">
           <p>Tel : <strong>+4 0744 586 226</strong> <br>Email: <strong>contact@alexhreniuc.ro</strong></p>
-          <form action="send.php" method="post" accept-charset="utf-8" id="JqPostForm">
-            <label for="nume">Nume</label><br><input type="text" name="name" value="" id="name"><br>
-            <label for="email">Email</label><br><input type="text" name="email" value="" id="email"><br>
-            <label for="mesaj">Mesaj</label><br><textarea rows="2" type="text" name="content" value="" id="content"></textarea>
-            <input type="hidden" name="to" value="contact@alexhreniuc.ro" id="to">
-            <input type="hidden" name="from" value="website@alexhreniuc.ro" id="from">
-            <input type="hidden" name="subject" value="Email trimis de pe site" id="subject">
+          <form name="contactForm" ng-controller="ContactformCtrl" ng-submit="submit()" id="JqPostForm">
+            <input type="text" required ng-model="formData.name" name="name" value="" id="name" placeholder="Name"><br>
+            <input type="email" required ng-model="formData.from" name="from" value="" id="email" placeholder="Email"><br>
+            <textarea ng-model="formData.content" name="content" rows="2" type="text" value="" id="content"></textarea>
+
+            <input type="hidden" ng-init="formData.to=&apos;contact@alexhreniuc.ro&apos;" name="to" value="contact@alexhreniuc.ro" id="to">
+            <input type="hidden" ng-init="formData.subject=&apos;Email trimis de pe site&apos;" name="subject" value="Email trimis de pe site" id="subject">
             <input type="submit" name="submit" value="Trimite" id="submit">
 
           </form>
@@ -132,7 +132,7 @@
 
     <script src="scripts/2d53cd22.vendor.js"></script>
 
-        <script src="scripts/d861aa4c.scripts.js"></script>
+        <script src="scripts/bf8f5319.scripts.js"></script>
 
 
 <!-- Begin Templates -->
@@ -141,10 +141,10 @@
 	<tbody>
 	  <tr>
 	    <td class="image" ng-repeat="photo in photoset.photo">
-		    <img class="picture" ng-src="{{photo.url_l}}" alt="{{photo.title}}"/>
+		    <img class="picture" ng-src="{{photo.url_l || photo.url_z}}" alt="{{photo.title}}" style="height:{{windowHeight - 100}}px;"/>
 		    <h4>{{photo.title}}</h4>
 		    <a  class="share_button" href="" ng-click="sharePictureFacebook(photo.url_l,photo.title)">
-				<img src="images/a2c8bda4.facebook-like.jpg">
+				<img src="images/a2c8bda4.facebook-like.jpg" >
 		    </a>
 		    <a class="share_button" href="" ng-click="sharePicturePinterest(photo.url_l,photo.title)" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28">
 		    	<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
